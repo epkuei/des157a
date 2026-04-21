@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experiment 2</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding-top: 150px;
+        }
+
+        p{
+            font-size: 1.2em;
+        }
+
+        h1{
+            font-size: 2.8em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Prompt the user for a color that the computer is "thinking of" - either red, yellow, green, or blue. Then pick a random color from an array. If the color entered by the user matches the color picked by the program, it displays the output message "You are right!". Otherwise, it displays "Try again!". (Credit: Krithika Govind) -->
+    <h1>Experiment 2</h1>
+
+    <h2></h2>
+    <p></p>
+
+    <script>
+    var colorPick = prompt("Which color am I thinking of? Red, Yellow, Green, or Blue?").toLowerCase();
+        var colorOptions = ["red", "blue", "green", "yellow"]
+
+        function randomInt(min,max){
+            var numOfValues = max-min+1;
+            var randomNum = Math.random();
+            var randomVal = randomNum * numOfValues;
+            var roundedRandomVal = Math.floor(randomVal);
+            var finalNum = min + roundedRandomVal;
+            
+            return finalNum;
+        }
+
+        function yourColor(color){
+            var randomColor = colorOptions[randomInt(0, colorOptions.length-1)];
+            
+           
+            if(colorPick === randomColor){
+                console.log(`I'm thinking of ${randomColor}.`);
+                
+
+                var message = document.querySelector('h2');
+                message.innerHTML = `<h2>You chose ${colorPick}.</h2>` + '<h2>You are correct!</h2>';
+
+                if(randomColor === 'red'){
+                document.querySelector('body').style.backgroundColor = "#DE2B4C";
+                }
+                else if (randomColor === 'yellow'){
+                    document.querySelector('body').style.backgroundColor = "#EDE7B1";
+                }
+                else if (randomColor === 'blue'){
+                    document.querySelector('body').style.backgroundColor = "#A9DEF9";
+                }
+                else{
+                    document.querySelector('body').style.backgroundColor = "#B8F4D0";
+                }
+
+            }
+            else{
+                console.log(`I'm thinking of ${randomColor}.`);
+
+                var message = document.querySelector('h2');
+                message.innerHTML = `<h2>You chose ${colorPick}. You are wrong, try again!</h2>`;
+                console.log(`And you chose ${colorPick}.`);
+
+                var index = colorOptions.indexOf(randomColor);
+                colorOptions.splice(index, 1);
+
+                var secondChoice = colorOptions[randomInt(0, colorOptions.length-1)];
+                console.log(`But my second choice was ${secondChoice}!`);
+                console.log(colorOptions);
+
+                var message2 = document.querySelector('p');
+                message2.innerHTML = `<p>I almost picked ${secondChoice}! Were you close? hehehe</p>`;
+            }
+
+        }
+
+        yourColor(colorOptions);
+    </script>
+</body>
+</html>
