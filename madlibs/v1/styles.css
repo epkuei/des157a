@@ -31,7 +31,6 @@ header h1 {
   color: #a78bfa;
   text-shadow: 0 0 8px #a78bfa, 0 0 24px rgba(167,139,250,0.3);
   margin: 0 0 2px;
-  animation: flicker 10s infinite;
 }
 
 header p {
@@ -63,16 +62,6 @@ section {
 }
 
 section:hover { border-color: #a78bfa; }
-
-section::before,
-section::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-color: #2dd4bf;
-  border-style: solid;
-}
 
 section::before {
   top: -1px; left: -1px;
@@ -223,13 +212,6 @@ footer {
 }
 
 /*  Animations  */
-@keyframes flicker {
-  0%, 95%, 100% { opacity: 1; }
-  96%           { opacity: 0.5; }
-  97%           { opacity: 1; }
-  98%           { opacity: 0.7; }
-}
-
 @keyframes wordPulse {
   from { text-shadow: 0 0 4px #f472b6; }
   to   { text-shadow: 0 0 16px #f472b6, 0 0 32px rgba(244,114,182,0.5); }
