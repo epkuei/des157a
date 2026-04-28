@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadLibs V1</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+    
+    <!-- My Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- link to js -->
+    <script src="script.js" defer></script> 
+</head>
+
+<body>
+    <header>
+        <h1>Away from Keyboard</h1>
+        <p>des157a MadLib</p>
+    </header>
+    
+    <main>
+
+        <section>
+            <h2>Controls Input</h2>
+            <form>
+                <label for="number">01 // Number (1–100)</label>
+                <input type="number" id="number" min="1" max="100" placeholder="e.g. 42" required>
+        
+                <label for="family-member">02 // Family Member</label>
+                <input type="text" id="family-member" placeholder="e.g. mom, sibling, uncle..." required>
+        
+                <label for="chore">03 // Chore or Task (verb)</label>
+                <input type="text" id="chore" placeholder="e.g. do the dishes, vacuum..." required>
+        
+                <label for="mood">04 // Mood Adjective</label>
+                <input type="text" id="mood" placeholder="e.g. furious, robotic..." required>
+        
+                <label for="noun">05 // Random Object (noun)</label>
+                <input type="text" id="noun" placeholder="e.g. lamp, server rack..." required>
+        
+                <label for="adjective">06 // Adjective</label>
+                <input type="text" id="adjective" placeholder="e.g. glitchy, neon..." required>
+        
+                <label for="monster">07 // Creature or Monster Type</label>
+                <input type="text" id="monster" placeholder="e.g. rogue AI, goblin..." required>
+        
+                <label for="action">08 // Action (verb)</label>
+                <input type="text" id="action" placeholder="e.g. hack, delete, loot..." required>
+        
+                <label for="location">09 // Location</label>
+                <input type="text" id="location" placeholder="e.g. the shadow net, spawn..." required>
+        
+                <label for="silly-object">10 // Silly Object</label>
+                <input type="text" id="silly-object" placeholder="e.g. rubber duck, flip phone..." required>
+        
+                <label for="exclamation">11 // Exclamation</label>
+                <input type="text" id="exclamation" placeholder="e.g. GG, YIKES, NO CAP..." required>
+        
+                <label for="verb-ing">12 // Verb ending in -ing</label>
+                <input type="text" id="verb-ing" placeholder="e.g. doing, grinding, lurking..." required>
+        
+                <input type="submit" value="Generate Story">
+            </form>
+        </section>
+
+        <section class="output-hidden">
+            <h2>Controls Output</h2>
+
+            <p>Hey guys, sorry I have to go AFK for like <strong id="out-number">???</strong> minutes. My <strong id="out-family-member">???</strong> is yelling at me to <strong id="out-chore">???</strong> and they sound <strong id="out-mood">???</strong>.</p>
+
+            <p>I tried to hide my character behind a <strong id="out-noun">???</strong> before leaving, but a <strong id="out-adjective">???</strong> <strong id="out-monster">???</strong> found me anyway. Typical.</p>
+
+            <p>While I'm gone, please do NOT <strong id="out-action">???</strong> my character. Last time someone did that I spawned back in <strong id="out-location">???</strong> with nothing but a <strong id="out-silly-object">???</strong> and my dignity in shambles.</p>
+
+            <p>Tell the squad I said <strong id="out-exclamation">???</strong> and that I died doing what I loved: <strong id="out-verb-ing">???</strong> nothing.</p>
+
+            <input type="button" value="Reset" id="reset-btn">
+        </section>
+
+    </main>
+
+    <footer>
+        <p>still away from keyboard?</p>
+        <p>des157a. madlib</p>
+    </footer>
+</body>
+</html>
