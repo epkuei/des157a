@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Away from Keyboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- screen 1 -->
+    <div id="screen-input" class="screen active">
+    <h1>Away from Keyboard</h1>
+    <div class="form-grid">
+        <div class="field">
+            <label for="number">Number (1–100)</label>
+            <input type="text" id="number" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="family">Family Member</label>
+            <input type="text" id="family" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="verb1">Name a chore/task</label>
+            <input type="text" id="verb1" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="adjective1">Mood Descriptor</label>
+            <input type="text" id="adjective1" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="noun">Random Object</label>
+            <input type="text" id="noun" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="adjective2">Adjective</label>
+            <input type="text" id="adjective2" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="monster">Creature/Monster</label>
+            <input type="text" id="monster" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="verb2">Action Verb</label>
+            <input type="text" id="verb2" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="place">Location (noun)</label>
+            <input type="text" id="place" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="silly">Silly/Useless Object</label>
+            <input type="text" id="silly" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="exclamation">Reaction Statement</label>
+            <input type="text" id="exclamation" placeholder="" />
+        </div>
+
+        <div class="field">
+            <label for="verbing">Verb ending in -ing</label>
+            <input type="text" id="verbing" placeholder="" />
+        </div>
+    </div>
+
+    <button id="btn-spawn" onclick="showResult()">Spawn in Now</button>
+    <p id="error-msg" class="error-msg"></p>
+  </div>
+
+  <!-- screen 2 -->
+    <div id="screen-result" class="screen">
+    <h1>Away from Keyboard</h1>
+    <div class="monitor">
+        <div class="monitor-screen">
+        <p id="result-text"></p>
+        <button id="btn-respawn" onclick="resetForm()">Respawn Now</button>
+        </div>
+        <div class="monitor-stand-neck"></div>
+        <div class="monitor-stand-base"></div>
+    </div>
+    </div>
+</body>
+</html>
