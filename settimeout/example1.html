@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 1</title>
+    <style>
+        main {
+            height: 80vh;
+            display: grid;
+            place-content: center;
+        }
+        #dot {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            /* transition: background-color 500ms; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Set Timeout Example 1</h1>
+    <main>
+        <div id="dot"></div>
+    </main>
+
+    <script>
+        setTimeout( function(){
+            document.querySelector('#dot').style.backgroundColor = 'green';
+        }, 2000 );
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    font-family: "Atma", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main div{
+    width: 1200px;
+    height: 615px;
+    margin: auto;
+    position: relative;
+}
+main > div > img{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+h1 {
+    font-family: "Atma", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: 3em;
+}
+
+article {
+    display: none;
+}
+
+#bubble {
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    background-color: white;
+    z-index: 2;
+}
+
+#corner {
+    position: absolute;
+    bottom: -46px;
+    left: 50%;
+    height: 50px;
+}
+
+.rock1a {
+    display: block;
+    bottom: 350px;
+    left: 100px;
+}
+
+.rock1b {
+    display: block;
+    bottom: 320px;
+    left: 570px;
+}
+
+.rock1c {
+    display: block;
+    bottom: 450px;
+    left: 670px;
+}
+
+.rock2a {
+    display: block;
+    bottom: 290px;
+    left: 300px;
+}
+
+.rock2b {
+    display: block;
+    bottom: 420px;
+    left: 520px;
+}
+
+.rock2c {
+    display: block;
+    bottom: 320px;
+    left: 900px;
+}
+
+.rock3a {
+    display: block;
+    bottom: 430px;
+    left: 290px;
+}
+
+.rock3b {
+    display: block;
+    bottom: 450px;
+    left: 490px;
+}
+
+.rock3c {
+    display: block;
+    bottom: 260px;
+    left: 900px;
+}
