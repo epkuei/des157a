@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #181818;
+    color: #e8ddd0;
+    font-family: 'Aboreto', serif;
+    min-height: 100vh;
+    padding: 70px 40px 80px;
+}
+
+.marias-color  { background-color: #4a7a96; }
+.halsey-color  { background-color: #7a2040; }  
+.nfr-color     { background-color: #3d5c35; }  
+
+/* header */
+header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.site-title {
+    font-family: 'Ballet', cursive;
+    font-size: 96px;
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.site-subtitle {
+    font-family: 'Aboreto', serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+#mute-btn {
+    background: none;
+    border: 1px solid #444;
+    color: #888;
+    font-family: 'Aboreto', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    /* smooth color transition on hover */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+#mute-btn:hover {
+    color: #e8ddd0;
+    border-color: #e8ddd0;
+}
+
+/* cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* animation */
+.card-wrapper {
+    perspective: 1000px;
+    width: 320px;
+    height: 480px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card.is-flipped:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+}
+
+.card-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-photo, .card-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+.card-photo {
+    opacity: 1;
+}
+
+.card-video {
+    opacity: 0;
+}
+
+.card-wrapper:hover .card-photo {
+    opacity: 0;
+}
+
+.card-wrapper:hover .card-video {
+    opacity: 1;
+}
+
+.card-front-info {
+    padding: 20px 24px 22px;
+    text-align: center;
+}
+
+.card-artist {
+    font-family: 'Ballet', cursive;
+    font-size: 34px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.1;
+}
+
+.card-date {
+    display: block;
+    font-family: 'Aboreto', serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px 28px;
+    color: #ffffff;
+}
+
+.back-artist {
+    font-family: 'Ballet', cursive;
+    font-size: 38px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.1;
+}
+
+.back-date {
+    display: block;
+    font-family: 'Aboreto', serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 28px;
+}
+
+.back-blurb {
+    font-family: 'Aboreto', serif;
+    font-size: 11px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.85);
+    flex: 1;
+    text-transform: uppercase;
+}
+
+.back-song {
+    font-family: 'Aboreto', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 10px;
+}
