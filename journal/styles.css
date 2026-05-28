@@ -9,10 +9,23 @@ body {
     flex-direction: column;
 }
 
-/* header */
+/* page wrapper: two columns */
+.page-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 4rem;
+    width: min(960px, 92%);
+    margin: 0 auto;
+    flex: 1;
+    align-items: start;
+    padding-bottom: 4rem;
+}
+
+/* header sticks in left column */
 header {
-    text-align: center;
-    padding: 4rem 2rem 3rem;
+    padding: 4rem 0 3rem;
+    position: sticky;
+    top: 2rem;
 }
 
 header h1 {
@@ -35,26 +48,38 @@ header p:last-child {
     color: #888888;
 }
 
-/* main */
+/* main: single column of cards */
 main {
-    flex: 1;
-    width: min(860px, 92%);
-    margin: 0 auto;
-    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    padding-top: 4rem;
 }
 
 /* cards */
 article {
     background: #ffffff;
     border-radius: 20px;
-    padding: 1.4rem 1.6rem;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
 }
 
-article h2 {
+article:hover {
+    box-shadow: 0 4px 16px 0 rgba(59, 7, 100, 0.08);
+}
+
+/* clickable header row */
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 1.6rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.article-header-text h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -62,13 +87,37 @@ article h2 {
     margin: 0 0 0.2rem;
 }
 
-article time {
+.article-header-text time {
     display: block;
     font-size: 0.8rem;
     color: #888888;
     font-weight: 500;
     letter-spacing: 0.03em;
-    margin-bottom: 1rem;
+}
+
+/* toggle icon */
+.toggle-icon {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #3b0764;
+    line-height: 1;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+/* article body — collapsed by default */
+.article-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1.6rem;
+}
+
+.article-body.open {
+    max-height: 2000px;
+    padding: 0 1.6rem 1.4rem;
 }
 
 article p {
@@ -80,6 +129,17 @@ article p {
 
 article p:last-child {
     margin-bottom: 0;
+}
+
+article figure {
+    margin: 0 0 1rem;
+}
+
+article figure img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* links */
@@ -116,4 +176,20 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* responsive: collapse to single column on small screens */
+@media (max-width: 600px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        position: static;
+        padding: 2rem 0 1rem;
+    }
+
+    main {
+        padding-top: 0;
+    }
 }
