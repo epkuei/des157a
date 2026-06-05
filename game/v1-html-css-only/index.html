@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game On Version 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+ 
+    <header>
+        <div class="logo">
+        <div class="logo-ears">
+            <div class="ear"></div>
+            <div class="ear"></div>
+        </div>
+        <div class="logo-title">Copy Cat</div>
+        <div class="logo-tagline">a dice placement game</div>
+        </div>
+    </header>
+    
+    <!-- MODE SELECT -->
+    <div id="mode-select">
+        <div class="mode-prompt">🐾 choose your game mode</div>
+        <div class="mode-cards">
+        <div class="mode-card" id="mode-2p">
+            <div class="mode-icon">🐱🐱</div>
+            <div class="mode-name">2 Players</div>
+            <div class="mode-desc">Pass and play with a friend on the same device</div>
+        </div>
+        <div class="mode-card alayna-card" id="mode-cpu">
+            <div class="mode-icon">😼✨</div>
+            <div class="mode-name">vs Alayna</div>
+            <div class="mode-desc">Challenge the computer and see if you can outsmart her</div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- GAME UI -->
+    <div id="game-ui">
+        <button class="back-btn" id="btn-back">← back to menu</button>
+    
+        <div class="score-strip">
+        <div class="score-pill" id="pill-p1">
+            <div class="who" id="label-p1">🐱 Player 1</div>
+            <div class="pts" id="score-p1">0</div>
+        </div>
+        <div class="status-bubble" id="status">Roll the dice to begin!</div>
+        <div class="score-pill p2-pill" id="pill-p2">
+            <div class="who" id="label-p2">🐱 Player 2</div>
+            <div class="pts" id="score-p2">0</div>
+        </div>
+        </div>
+    
+        <div class="boards-row">
+        <div class="board-card" id="board-card-p1">
+            <div class="board-header">
+            <span class="cat-icon">🐱</span>
+            <span class="board-name" id="boardname-p1">Player 1</span>
+            </div>
+            <div class="grid" id="grid-p1"></div>
+        </div>
+        <div class="board-card p2-card" id="board-card-p2">
+            <div class="board-header">
+            <span class="cat-icon" id="icon-p2">🐱</span>
+            <span class="board-name" id="boardname-p2">Player 2</span>
+            </div>
+            <div class="grid" id="grid-p2"></div>
+        </div>
+        </div>
+    
+        <div class="dice-area">
+        <!-- SVG dice rendered by JS -->
+        <div class="die-wrap">
+            <svg id="die-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-roll" id="btn-roll">Roll!</button>
+            <button class="btn btn-secondary" id="btn-new">New game</button>
+        </div>
+        </div>
+    
+        <div id="gameover-area"></div>
+    
+        <div class="rules">
+        <div class="rule-chip"><span>✨</span> Matching dice in a column multiply your score</div>
+        <div class="rule-chip"><span>💥</span> Placing a die removes that value from the opponent's same column</div>
+        <div class="rule-chip"><span>🏁</span> First to fill their board ends the game</div>
+        </div>
+    </div>
+    
+    </div>
+</body>
+</html>
