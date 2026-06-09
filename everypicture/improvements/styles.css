@@ -218,3 +218,54 @@ header {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin-top: 10px;
 }
+
+/* mobile responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 40px 16px 56px;
+    }
+ 
+    .site-title {
+        font-size: 52px;
+    }
+ 
+    .site-subtitle {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+ 
+    header {
+        margin-bottom: 40px;
+    }
+ 
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+ 
+    /* Cards fill width but stay within viewport */
+    .card-wrapper {
+        width: min(320px, 100%);
+        height: auto;
+        aspect-ratio: 320 / 480;
+    }
+ 
+    /* Touch: show video on tap (handled via JS), 
+       but keep photo visible by default since hover doesn't exist */
+    .card-wrapper:hover .card-photo {
+        opacity: 1;
+    }
+ 
+    .card-wrapper:hover .card-video {
+        opacity: 0;
+    }
+ 
+    .card-wrapper.is-playing .card-photo {
+        opacity: 0;
+    }
+ 
+    .card-wrapper.is-playing .card-video {
+        opacity: 1;
+    }
+}
